@@ -4,6 +4,35 @@
 # yamllint disable rule:comments
 # too many spelling things, spell-checker: disable
 ---
+- module-name: "selenium"
+  data-files:
+    dirs:
+      - "."
+  dlls:
+    - from_filenames:
+        relative_path: "webdriver/common/windows"
+        prefixes:
+          - "selenium-manager"
+        executable: "yes"
+      when: "win32"
+
+- module-name: "pypdfium2"
+  data-files:
+    dirs:
+      - "."
+  implicit-imports:
+    - depends:
+        - "pypdfium2_raw"
+
+- module-name: "pypdfium2_raw"
+  data-files:
+    dirs:
+      - "."
+  dlls:
+    - from_filenames:
+        prefixes:
+          - "pdfium"
+
 - module-name: '_dbus_glib_bindings' # checksum: 437428e9
   implicit-imports:
     - depends:
