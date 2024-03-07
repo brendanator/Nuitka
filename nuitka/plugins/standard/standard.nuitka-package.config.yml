@@ -3493,6 +3493,23 @@
       change_function:
         'set_break': 'un-callable'
 
+- module-name: 'pypdfium2' # checksum: 2216d2b7
+  data-files:
+    dirs:
+      - '.'
+  implicit-imports:
+    - depends:
+        - 'pypdfium2_raw'
+
+- module-name: 'pypdfium2_raw' # checksum: 198306ce
+  data-files:
+    dirs:
+      - '.'
+  dlls:
+    - from_filenames:
+        prefixes:
+          - 'pdfium'
+
 - module-name: 'pyphen' # checksum: 708b31da
   data-files:
     dirs:
@@ -4269,6 +4286,18 @@
   data-files:
     patterns:
       - 'words.txt'
+
+- module-name: 'selenium' # checksum: 19747624
+  data-files:
+    dirs:
+      - '.'
+  dlls:
+    - from_filenames:
+        relative_path: 'webdriver/common/windows'
+        prefixes:
+          - 'selenium-manager'
+        executable: 'yes'
+      when: 'win32'
 
 - module-name: 'sentence_transformers.SentenceTransformer' # checksum: c6062648
   implicit-imports:
